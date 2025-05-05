@@ -20,12 +20,7 @@ def main():
             print("How can I help you?")
 
         elif command in ("add", "change", "phone"):
-            # Якщо аргументів немає, попросимо ввести їх окремо
-            if not args:
-                print("Enter the argument for the command")
-                user_input = input("Enter a command: ").strip()
-                _, args = parse_input(user_input)
-
+            
             if command == "add": # Додати контакт
                 print(add_contact(args, contacts))
             elif command == "change": # Змінити номер телефону
@@ -34,7 +29,7 @@ def main():
                 print(phone(args[0], contacts))
 
         elif command == 'all': # Показати всі контакти
-            show_all(contacts)
+            print(show_all(contacts))
             
         else: # Якщо команда не розпізнана
             print("Invalid command.")

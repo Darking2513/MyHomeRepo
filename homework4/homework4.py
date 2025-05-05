@@ -53,7 +53,6 @@ def phone(name, contacts: dict):
 def show_all(contacts: dict):
     # Виведи всі контакти
     if contacts:
-        for name, phone in contacts.items():
-            print(f"{name}: {phone}")
+        return "\n".join([f"{name}: {phone}" for name, phone in contacts.items()])
     else:
-        print("No contacts found.")
+        return "No contacts found."
